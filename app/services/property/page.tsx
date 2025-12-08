@@ -45,7 +45,7 @@ export default function PropertyPage() {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-white/90 max-w-3xl drop-shadow-lg"
             >
-              Expert guidance on residential, commercial, and industrial property investments in New Zealand. 
+              Expert guidance on residential, commercial, and industrial property investments worldwide. 
               Helping migrants and investors make informed property decisions.
             </motion.p>
           </motion.div>
@@ -58,7 +58,7 @@ export default function PropertyPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Property Types"
-            subtitle="Explore different property investment opportunities in New Zealand"
+            subtitle="Explore different property investment opportunities worldwide"
             center
           />
           
@@ -167,9 +167,9 @@ export default function PropertyPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Invest in New Zealand Property?</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Invest in Property Worldwide?</h2>
               <p className="text-lg text-gray-600 mb-8">
-                New Zealand offers a stable property market with transparent regulations, strong property rights, 
+                Global markets offer stable property markets with transparent regulations, strong property rights, 
                 and excellent growth potential. Whether you&apos;re looking for residential homes, commercial spaces, 
                 or industrial facilities, we help you navigate the entire investment process.
               </p>

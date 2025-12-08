@@ -11,7 +11,7 @@ const values = [
   },
   {
     title: 'Experience',
-    description: 'Deep knowledge of New Zealand business, property, and immigration landscape.',
+    description: 'Deep knowledge of global business, property, and immigration landscape.',
   },
   {
     title: 'Network',
@@ -36,7 +36,7 @@ export default function AboutPage() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
             <p className="text-xl text-primary-100 max-w-3xl">
-              Your trusted partner for business investment and immigration services in New Zealand.
+              Your trusted partner for business investment and immigration services worldwide.
             </p>
           </motion.div>
         </div>
@@ -55,14 +55,14 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                At Trade-me, we are dedicated to helping migrants and investors successfully navigate 
-                the New Zealand business and property landscape. We understand that investing in a 
+                At BFIS, we are dedicated to helping migrants and investors successfully navigate 
+                the global business and property landscape. We understand that investing in a 
                 new country can be complex, and we&apos;re here to provide expert guidance every step of the way.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Our mission is to connect ambitious individuals with opportunities that align with 
                 their goals, whether that&apos;s purchasing a business, investing in property, finding 
-                employment, or accessing quality healthcare in New Zealand.
+                employment, or accessing quality healthcare worldwide.
               </p>
             </motion.div>
           </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Vision</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                We envision a future where New Zealand continues to be a destination of choice for 
+                We envision a future where global markets continue to be destinations of choice for 
                 investors and migrants seeking quality of life, business opportunities, and a 
                 stable environment. Through our services, we aim to contribute to this vision by 
                 facilitating successful investments and smooth transitions for our clients.
@@ -131,7 +131,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">Our Experience</h2>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  With years of experience in New Zealand&apos;s business and property markets, our team 
+                  With years of experience in global business and property markets, our team 
                   has helped numerous clients successfully invest, migrate, and establish themselves 
                   in the country. We understand the nuances of different business types, property 
                   markets, and immigration pathways.
@@ -164,7 +164,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Work With Us?</h2>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Contact us today to discuss how we can help you achieve your goals in New Zealand.
+              Contact us today to discuss how we can help you achieve your goals worldwide.
             </p>
             <Button href="/contact" variant="secondary">
               Get in Touch

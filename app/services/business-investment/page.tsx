@@ -45,7 +45,7 @@ export default function BusinessInvestmentPage() {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-white/90 max-w-3xl drop-shadow-lg"
             >
-              Explore diverse business opportunities across New Zealand. From petrol stations to farms, 
+              Explore diverse business opportunities worldwide. From petrol stations to farms, 
               find the right investment that matches your goals and experience.
             </motion.p>
           </motion.div>
@@ -57,7 +57,7 @@ export default function BusinessInvestmentPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Business Opportunities"
-            subtitle="Browse our catalogue of business types available in New Zealand"
+            subtitle="Browse our catalogue of business types available worldwide"
             center
           />
           <motion.div
@@ -157,9 +157,9 @@ export default function BusinessInvestmentPage() {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Invest in New Zealand Businesses?</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Invest in Businesses Worldwide?</h2>
               <p className="text-lg text-gray-600 mb-8">
-                New Zealand offers a stable business environment with transparent regulations, strong property rights, 
+                Global markets offer stable business environments with transparent regulations, strong property rights, 
                 and access to global markets. Many business investments can also support immigration pathways for 
                 investors and entrepreneurs.
               </p>

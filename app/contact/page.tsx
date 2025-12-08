@@ -87,7 +87,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-primary-100 max-w-3xl">
               Get in touch with us to discuss your business investment, property, recruitment, 
-              or medical tourism needs in New Zealand.
+              or medical tourism needs worldwide.
             </p>
           </motion.div>
         </div>
@@ -238,7 +238,7 @@ export default function ContactPage() {
             >
               <div className="text-4xl mb-4">📧</div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900">Email</h3>
-              <p className="text-gray-600">info@trade-me.co.nz</p>
+              <p className="text-gray-600">info@bfis.co.nz</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -260,7 +260,7 @@ export default function ContactPage() {
             >
               <div className="text-4xl mb-4">📍</div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900">Location</h3>
-              <p className="text-gray-600">Auckland, New Zealand</p>
+              <p className="text-gray-600">Worldwide Services</p>
             </motion.div>
           </div>
         </div>

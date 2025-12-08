@@ -33,7 +33,7 @@ export default function Home() {
         >
           <Image
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="New Zealand landscape"
+            alt="Global landscape"
             fill
             className="object-cover"
             priority
@@ -65,7 +65,7 @@ export default function Home() {
               >
                 Business & Investment
                 <br />
-                <span className="text-accent-300">Opportunities in New Zealand</span>
+                <span className="text-accent-300">Opportunities Worldwide</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -74,7 +74,7 @@ export default function Home() {
                 className="text-xl md:text-2xl mb-8 text-white/90 drop-shadow-lg"
               >
                 Expert guidance for migrants and investors seeking business purchases, property investments, 
-                recruitment services, and medical tourism in New Zealand.
+                recruitment services, and medical tourism worldwide.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -122,7 +122,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="What We Do"
-            subtitle="Comprehensive services to help you succeed in New Zealand"
+            subtitle="Comprehensive services to help you succeed worldwide"
             center
           />
           <motion.div
@@ -202,12 +202,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why New Zealand Section with Images */}
+      {/* Why Worldwide Section with Images */}
       <section className="relative py-16 md:py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="Why New Zealand"
-            subtitle="Discover what makes New Zealand an ideal destination for investment and migration"
+            title="Why Choose Worldwide"
+            subtitle="Discover what makes global markets ideal destinations for investment and migration"
             center
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -284,7 +284,7 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Why Choose Us"
-            subtitle="Your trusted partner for success in New Zealand"
+            subtitle="Your trusted partner for success worldwide"
             center
           />
           <div className="max-w-3xl mx-auto">

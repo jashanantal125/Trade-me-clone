@@ -144,11 +144,11 @@ export const businessTypes = [
 export const whyNewZealand = [
   {
     title: 'Political Stability',
-    description: 'New Zealand offers a stable political environment and transparent business regulations.',
+    description: 'Many countries worldwide offer stable political environments and transparent business regulations.',
   },
   {
     title: 'Quality of Life',
-    description: 'World-class healthcare, education, and natural beauty make NZ an ideal place to live and work.',
+    description: 'World-class healthcare, education, and natural beauty make many destinations ideal places to live and work.',
   },
   {
     title: 'Business-Friendly',
@@ -156,7 +156,7 @@ export const whyNewZealand = [
   },
   {
     title: 'Immigration Pathways',
-    description: 'Various visa options for investors, entrepreneurs, and skilled workers.',
+    description: 'Various visa options for investors, entrepreneurs, and skilled workers worldwide.',
   },
 ]
 

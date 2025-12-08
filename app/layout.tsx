@@ -7,8 +7,8 @@ import Footer from '@/components/layout/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Trade-me | Business Investment & Immigration Consultancy',
-  description: 'New Zealand-based consultancy helping migrants and investors with business purchases, property advisory, jobs & recruitment, and medical tourism.',
+  title: 'BFIS | Business Investment & Immigration Consultancy',
+  description: 'Worldwide consultancy helping migrants and investors with business purchases, property advisory, jobs & recruitment, and medical tourism.',
 }
 
 export default function RootLayout({

@@ -17,15 +17,15 @@ const treatments = [
 
 const faqs = [
   {
-    question: 'What makes New Zealand healthcare attractive for medical tourism?',
-    answer: 'New Zealand offers world-class healthcare facilities with internationally trained doctors, modern medical technology, and high standards of care. The country is known for its clean environment, safety, and excellent post-operative recovery conditions.',
+    question: 'What makes global healthcare attractive for medical tourism?',
+    answer: 'Worldwide destinations offer world-class healthcare facilities with internationally trained doctors, modern medical technology, and high standards of care. Many countries are known for their clean environment, safety, and excellent post-operative recovery conditions.',
   },
   {
     question: 'What is the typical process for medical tourism?',
-    answer: 'The process typically involves: initial consultation (can be remote), medical assessment and documentation, visa application support, travel arrangements, treatment in New Zealand, and follow-up care. We guide you through each step.',
+    answer: 'The process typically involves: initial consultation (can be remote), medical assessment and documentation, visa application support, travel arrangements, treatment at your chosen destination, and follow-up care. We guide you through each step.',
   },
   {
-    question: 'How long do I need to stay in New Zealand?',
+    question: 'How long do I need to stay at the destination?',
     answer: 'The length of stay depends on the procedure. Minor procedures may require 1-2 weeks, while major surgeries might need 4-8 weeks including recovery time. We help plan your stay based on your specific treatment.',
   },
   {
@@ -53,7 +53,7 @@ export default function MedicalTourismPage() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Medical Tourism</h1>
             <p className="text-xl text-primary-100 max-w-3xl">
-              Access world-class healthcare in New Zealand. Experience high-quality medical treatment 
+              Access world-class healthcare worldwide. Experience high-quality medical treatment 
               in a safe, clean, and beautiful environment.
             </p>
           </motion.div>
@@ -64,7 +64,7 @@ export default function MedicalTourismPage() {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            title="Why Choose New Zealand for Medical Treatment"
+            title="Why Choose Worldwide Medical Treatment"
             subtitle="World-class healthcare in a world-class destination"
             center
           />
@@ -117,7 +117,7 @@ export default function MedicalTourismPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Types of Treatments"
-            subtitle="Comprehensive medical services available in New Zealand"
+            subtitle="Comprehensive medical services available worldwide"
             center
           />
           <div className="max-w-3xl mx-auto">
@@ -150,10 +150,10 @@ export default function MedicalTourismPage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {[
-                { step: '1', title: 'Initial Consultation', description: 'We discuss your medical needs, review your medical history, and identify suitable treatment options in New Zealand.' },
-                { step: '2', title: 'Documentation & Assessment', description: 'We help gather necessary medical documents, arrange consultations with New Zealand medical professionals, and obtain treatment plans.' },
+                { step: '1', title: 'Initial Consultation', description: 'We discuss your medical needs, review your medical history, and identify suitable treatment options worldwide.' },
+                { step: '2', title: 'Documentation & Assessment', description: 'We help gather necessary medical documents, arrange consultations with medical professionals globally, and obtain treatment plans.' },
                 { step: '3', title: 'Travel Arrangements', description: 'We assist with visa applications, flight bookings, accommodation near medical facilities, and travel logistics.' },
-                { step: '4', title: 'Treatment in New Zealand', description: 'You receive treatment at accredited facilities with ongoing support and translation services if needed.' },
+                { step: '4', title: 'Treatment at Destination', description: 'You receive treatment at accredited facilities worldwide with ongoing support and translation services if needed.' },
                 { step: '5', title: 'Recovery & Follow-up', description: 'Post-treatment care, recovery support, follow-up consultations, and assistance with returning home when ready.' },
               ].map((item, index) => (
                 <motion.div
@@ -183,7 +183,7 @@ export default function MedicalTourismPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Frequently Asked Questions"
-            subtitle="Common questions about medical tourism in New Zealand"
+            subtitle="Common questions about medical tourism worldwide"
             center
           />
           <div className="space-y-4">
@@ -237,7 +237,7 @@ export default function MedicalTourismPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Begin Your Medical Journey?</h2>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Contact us to discuss your medical tourism needs and start planning your treatment in New Zealand.
+              Contact us to discuss your medical tourism needs and start planning your treatment worldwide.
             </p>
             <Button href="/contact" variant="secondary">
               Contact Us
