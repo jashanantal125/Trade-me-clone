@@ -174,7 +174,7 @@ export default function JobsManpowerPage() {
                   leave, sick leave, and professional development opportunities.
                 </p>
                 <p>
-                  For migrants, understanding New Zealand's work culture and compliance requirements is 
+                  For migrants, understanding New Zealand&apos;s work culture and compliance requirements is 
                   essential. We provide guidance on employment contracts, rights, and workplace expectations.
                 </p>
               </div>
@@ -194,8 +194,8 @@ export default function JobsManpowerPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Connect?</h2>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Whether you're an employer seeking talent or a candidate looking for opportunities, 
-              we're here to help.
+              Whether you&apos;re an employer seeking talent or a candidate looking for opportunities, 
+              we&apos;re here to help.
             </p>
             <Button href="/contact" variant="secondary">
               Contact Us

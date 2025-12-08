@@ -170,7 +170,7 @@ export default function PropertyPage() {
               <h2 className="text-3xl font-bold mb-6 text-gray-900">Why Invest in New Zealand Property?</h2>
               <p className="text-lg text-gray-600 mb-8">
                 New Zealand offers a stable property market with transparent regulations, strong property rights, 
-                and excellent growth potential. Whether you're looking for residential homes, commercial spaces, 
+                and excellent growth potential. Whether you&apos;re looking for residential homes, commercial spaces, 
                 or industrial facilities, we help you navigate the entire investment process.
               </p>
               <p className="text-lg text-gray-600">

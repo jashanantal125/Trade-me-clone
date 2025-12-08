@@ -67,20 +67,20 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 <div>
                   <h2 className="text-2xl font-semibold mb-4 text-gray-900">About {property.name} in New Zealand</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    {property.name} represents a significant opportunity in New Zealand's property market. 
+                    {property.name} represents a significant opportunity in New Zealand&apos;s property market. 
                     These properties offer diverse investment potential, from capital appreciation to rental 
                     income, depending on your investment strategy.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     The New Zealand market for {property.name.toLowerCase()} offers unique advantages including 
-                    regulatory stability, strong demand, and potential for growth. Whether you're looking to 
+                    regulatory stability, strong demand, and potential for growth. Whether you&apos;re looking to 
                     purchase for personal use, rental income, or long-term investment, we can help you find 
                     the right opportunity.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4 text-gray-900">Why It's Attractive for Investors</h2>
+                  <h2 className="text-2xl font-semibold mb-4 text-gray-900">Why It&apos;s Attractive for Investors</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     {property.name} in New Zealand offer several compelling reasons for investment:
                   </p>

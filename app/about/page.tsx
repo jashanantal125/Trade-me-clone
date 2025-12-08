@@ -57,11 +57,11 @@ export default function AboutPage() {
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 At Trade-me, we are dedicated to helping migrants and investors successfully navigate 
                 the New Zealand business and property landscape. We understand that investing in a 
-                new country can be complex, and we're here to provide expert guidance every step of the way.
+                new country can be complex, and we&apos;re here to provide expert guidance every step of the way.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Our mission is to connect ambitious individuals with opportunities that align with 
-                their goals, whether that's purchasing a business, investing in property, finding 
+                their goals, whether that&apos;s purchasing a business, investing in property, finding 
                 employment, or accessing quality healthcare in New Zealand.
               </p>
             </motion.div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">Our Experience</h2>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  With years of experience in New Zealand's business and property markets, our team 
+                  With years of experience in New Zealand&apos;s business and property markets, our team 
                   has helped numerous clients successfully invest, migrate, and establish themselves 
                   in the country. We understand the nuances of different business types, property 
                   markets, and immigration pathways.
@@ -143,7 +143,7 @@ export default function AboutPage() {
                   comprehensive support to our clients.
                 </p>
                 <p>
-                  Whether you're looking to purchase a petrol station, invest in commercial property, 
+                  Whether you&apos;re looking to purchase a petrol station, invest in commercial property, 
                   find employment opportunities, or access medical services, we have the knowledge and 
                   network to help you succeed.
                 </p>

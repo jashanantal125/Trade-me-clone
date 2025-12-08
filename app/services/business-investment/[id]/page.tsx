@@ -80,20 +80,20 @@ export default function BusinessDetailPage({ params }: { params: { id: string } 
                 <div>
                   <h2 className="text-2xl font-semibold mb-4 text-gray-900">About {business.name} in New Zealand</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    {business.name} represent a significant opportunity in New Zealand's business landscape. 
+                    {business.name} represent a significant opportunity in New Zealand&apos;s business landscape. 
                     These businesses often provide stable cash flow, established customer bases, and 
                     opportunities for both hands-on operators and passive investors.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     The New Zealand market for {business.name.toLowerCase()} offers unique advantages including 
-                    regulatory stability, strong local demand, and potential for growth. Whether you're 
+                    regulatory stability, strong local demand, and potential for growth. Whether you&apos;re 
                     looking to operate the business yourself or invest with management in place, we can 
                     help you find the right opportunity.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-semibold mb-4 text-gray-900">Why It's Attractive for Investors</h2>
+                  <h2 className="text-2xl font-semibold mb-4 text-gray-900">Why It&apos;s Attractive for Investors</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     {business.name} in New Zealand offer several compelling reasons for investment:
                   </p>
