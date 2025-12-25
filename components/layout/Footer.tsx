@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -6,7 +7,15 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">BFIS</h3>
+            <div className="mb-4">
+              <Image
+                src="/images/fbis-logo - Edited.png"
+                alt="FBIS Logo"
+                width={200}
+                height={200}
+                className="h-16 w-auto object-contain"
+              />
+            </div>
             <p className="text-gray-400 text-sm">
               Your trusted partner for business investment and immigration services worldwide.
             </p>
@@ -57,15 +66,15 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Email: info@bfis.co.nz</li>
-              <li>Phone: +64 9 XXX XXXX</li>
-              <li>Worldwide Services</li>
+              <li>Email: fbis.nzd@gmail.com</li>
+              <li>Address: 33 Margarita Rise</li>
+              <li>Pukekohe, 2120, New Zealand</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} BFIS. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Foreign Business Investment Solutions (FBIS). All rights reserved.</p>
         </div>
       </div>
     </footer>

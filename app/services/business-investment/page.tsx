@@ -23,6 +23,11 @@ export default function BusinessInvestmentPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900/85 via-primary-800/80 to-primary-700/85" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Rotating Torch Effect */}
+          <div className="torch-container absolute inset-0 flex items-center justify-center">
+            <div className="torch-light" />
+          </div>
+          
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -30,6 +35,7 @@ export default function BusinessInvestmentPage() {
               duration: 1,
               ease: [0.6, -0.05, 0.01, 0.99]
             }}
+            className="relative z-10"
           >
             <motion.h1
               initial={{ opacity: 0, y: 30 }}

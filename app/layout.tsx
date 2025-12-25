@@ -7,8 +7,11 @@ import Footer from '@/components/layout/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'BFIS | Business Investment & Immigration Consultancy',
+  title: 'FBIS | Foreign Business Investment Solutions',
   description: 'Worldwide consultancy helping migrants and investors with business purchases, property advisory, jobs & recruitment, and medical tourism.',
+  icons: {
+    icon: '/images/fbis-logo - Edited.png',
+  },
 }
 
 export default function RootLayout({

@@ -77,8 +77,12 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 md:py-24 overflow-hidden">
+        {/* Rotating Torch Effect */}
+        <div className="torch-container absolute inset-0 flex items-center justify-center">
+          <div className="torch-light" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -238,7 +242,9 @@ export default function ContactPage() {
             >
               <div className="text-4xl mb-4">📧</div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900">Email</h3>
-              <p className="text-gray-600">info@bfis.co.nz</p>
+              <a href="mailto:fbis.nzd@gmail.com" className="text-primary-600 hover:text-primary-700 transition-colors">
+                fbis.nzd@gmail.com
+              </a>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -247,9 +253,15 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-center"
             >
-              <div className="text-4xl mb-4">📞</div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">Phone</h3>
-              <p className="text-gray-600">+64 9 XXX XXXX</p>
+              <div className="text-4xl mb-4">📍</div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Address</h3>
+              <p className="text-gray-600">
+                33 Margarita Rise
+                <br />
+                Pukekohe, 2120
+                <br />
+                New Zealand
+              </p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -258,8 +270,8 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-center"
             >
-              <div className="text-4xl mb-4">📍</div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">Location</h3>
+              <div className="text-4xl mb-4">🌍</div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Services</h3>
               <p className="text-gray-600">Worldwide Services</p>
             </motion.div>
           </div>

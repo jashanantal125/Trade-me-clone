@@ -8,7 +8,7 @@ interface ServiceCardProps {
   title: string
   description: string
   href: string
-  icon?: string
+  icon?: React.ReactNode
   delay?: number
   imageUrl?: string
 }
@@ -47,17 +47,17 @@ const ServiceCard = ({ title, description, href, icon, delay = 0, imageUrl }: Se
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             
             {/* Icon Overlay */}
-            {icon && (
-              <motion.div
-                initial={{ scale: 0, rotate: -180 }}
-                whileInView={{ scale: 1, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: delay + 0.2, type: "spring" }}
-                className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-2xl shadow-lg"
-              >
-                {icon}
-              </motion.div>
-            )}
+          {icon && (
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: delay + 0.2, type: "spring" }}
+              className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-700 shadow-lg"
+            >
+              {icon}
+            </motion.div>
+          )}
           </div>
           
           {/* Content */}

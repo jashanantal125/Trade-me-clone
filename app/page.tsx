@@ -2,10 +2,28 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
+import {
+  HomeIcon,
+  BuildingOffice2Icon,
+  UsersIcon,
+  HeartIcon,
+  ChartBarSquareIcon,
+  ClockIcon,
+  BuildingStorefrontIcon,
+  StarIcon,
+  PhoneIcon,
+  MagnifyingGlassIcon,
+  ClipboardDocumentCheckIcon,
+  HandThumbUpIcon,
+  CheckCircleIcon,
+  ShieldCheckIcon,
+  BuildingOfficeIcon,
+  ChatBubbleLeftRightIcon,
+} from '@heroicons/react/24/outline'
 import ServiceCard from '@/components/ui/ServiceCard'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
-import { services, whyNewZealand, whyChooseUs } from '@/constants/content'
+import { services, whyNewZealand, whyChooseUs, statistics, testimonials, processSteps } from '@/constants/content'
 
 export default function Home() {
   const { scrollY } = useScroll()
@@ -32,8 +50,8 @@ export default function Home() {
           className="absolute inset-0 z-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Global landscape"
+            src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Business investment and property opportunities"
             fill
             className="object-cover"
             priority
@@ -47,7 +65,12 @@ export default function Home() {
           style={{ y: y2, opacity }}
           className="absolute inset-0 z-10 flex items-center justify-center"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Rotating Torch Effect */}
+          <div className="torch-container absolute inset-0 flex items-center justify-center">
+            <div className="torch-light" />
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -94,7 +117,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+          className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-20"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -108,6 +131,60 @@ export default function Home() {
             />
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="py-12 md:py-16 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
+          >
+            {statistics.map((stat, index) => (
+              <motion.div
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
+                className="text-center"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, type: "spring" }}
+                  className="text-primary-50 mb-3 flex items-center justify-center"
+                >
+                  {index === 0 && <ChartBarSquareIcon className="w-10 h-10" />}
+                  {index === 1 && <ClockIcon className="w-10 h-10" />}
+                  {index === 2 && <BuildingStorefrontIcon className="w-10 h-10" />}
+                  {index === 3 && <StarIcon className="w-10 h-10" />}
+                </motion.div>
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 + 0.2 }}
+                  className="text-3xl md:text-4xl font-bold mb-2"
+                >
+                  {stat.number}
+                </motion.h3>
+                <p className="text-primary-100 text-sm md:text-base">{stat.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </section>
 
       {/* What We Do Section */}
@@ -149,7 +226,7 @@ export default function Home() {
                 title={services.property.title}
                 description={services.property.description}
                 href="/services/property"
-                icon={services.property.icon}
+                icon={<HomeIcon className="w-7 h-7" />}
                 delay={0}
               />
             </motion.div>
@@ -164,7 +241,7 @@ export default function Home() {
                 title={services.businessInvestment.title}
                 description={services.businessInvestment.description}
                 href="/services/business-investment"
-                icon={services.businessInvestment.icon}
+                icon={<BuildingOffice2Icon className="w-7 h-7" />}
                 delay={0}
               />
             </motion.div>
@@ -179,7 +256,7 @@ export default function Home() {
                 title={services.jobsManpower.title}
                 description={services.jobsManpower.description}
                 href="/services/jobs-manpower"
-                icon={services.jobsManpower.icon}
+                icon={<UsersIcon className="w-7 h-7" />}
                 delay={0}
               />
             </motion.div>
@@ -194,7 +271,7 @@ export default function Home() {
                 title={services.medicalTourism.title}
                 description={services.medicalTourism.description}
                 href="/services/medical-tourism"
-                icon={services.medicalTourism.icon}
+                icon={<HeartIcon className="w-7 h-7" />}
                 delay={0}
               />
             </motion.div>
@@ -233,7 +310,14 @@ export default function Home() {
                 {/* Background Image */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
                   <Image
-                    src={`https://images.unsplash.com/photo-${1506905925346 + index}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
+                    src={index === 0 
+                      ? "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      : index === 1
+                      ? "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      : index === 2
+                      ? "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                      : "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    }
                     alt={item.title}
                     fill
                     className="object-cover"
@@ -267,13 +351,141 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works / Process Section */}
+      <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-accent-100 rounded-full blur-3xl opacity-20 -ml-48 -mt-48" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="How It Works"
+            subtitle="Our proven 5-step process to help you succeed in New Zealand"
+            center
+          />
+          <div className="relative">
+            {/* Connection Line */}
+            <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-200 via-primary-400 to-primary-200" />
+            
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.2
+                  }
+                }
+              }}
+              className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-4"
+            >
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={step.step}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ duration: 0.6 }}
+                  className="relative"
+                >
+                  <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:border-primary-300 transition-all hover:shadow-xl text-center h-full">
+                    {/* Step Number Badge */}
+                    <div className="relative inline-flex items-center justify-center mb-4">
+                      <div className="absolute inset-0 bg-primary-100 rounded-full blur-md opacity-50" />
+                      <div className="relative w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center shadow-lg">
+                        <span className="text-white text-xl font-bold">{step.step}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Icon */}
+                    <div className="text-primary-600 mb-3 flex justify-center">
+                      {step.step === 1 && <PhoneIcon className="w-8 h-8" />}
+                      {step.step === 2 && <MagnifyingGlassIcon className="w-8 h-8" />}
+                      {step.step === 3 && <ClipboardDocumentCheckIcon className="w-8 h-8" />}
+                      {step.step === 4 && <HandThumbUpIcon className="w-8 h-8" />}
+                      {step.step === 5 && <CheckCircleIcon className="w-8 h-8" />}
+                    </div>
+                    
+                    {/* Content */}
+                    <h3 className="text-lg font-semibold mb-2 text-gray-900">{step.title}</h3>
+                    <p className="text-gray-600 text-sm">{step.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="What Our Clients Say"
+            subtitle="Real stories from successful investors and migrants"
+            center
+          />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ y: -5 }}
+                className="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-xl transition-all"
+              >
+                {/* Rating Stars */}
+                <div className="flex mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                
+                {/* Testimonial Text */}
+                <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                
+                {/* Author */}
+                <div className="flex items-center">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-3 flex-shrink-0">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                    <p className="text-sm text-gray-600">{testimonial.role} • {testimonial.location}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section with Background Image */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-            alt="Business meeting"
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+            alt="Professional business consultation and partnership"
             fill
             className="object-cover"
             quality={80}
@@ -351,12 +563,85 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Newsletter Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Stay Updated with NZ Investment Opportunities
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Subscribe to our newsletter for the latest business opportunities, property listings, and immigration updates.
+            </p>
+            <motion.form
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none"
+              />
+              <Button variant="primary" className="px-6 py-3">
+                Subscribe
+              </Button>
+            </motion.form>
+            <p className="text-sm text-gray-500 mt-4">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Trust & Certifications Section */}
+      <section className="py-12 md:py-16 bg-white border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-8"
+          >
+            <p className="text-gray-600 text-sm uppercase tracking-wide font-semibold mb-4">
+              Trusted & Certified
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-80">
+              <div className="flex items-center space-x-2 text-gray-700">
+                <BuildingOfficeIcon className="w-6 h-6 text-primary-600" />
+                <span className="font-medium">NZ Registered</span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-700">
+                <ShieldCheckIcon className="w-6 h-6 text-primary-600" />
+                <span className="font-medium">Licensed Advisors</span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-700">
+                  <HandThumbUpIcon className="w-6 h-6 text-primary-600" />
+                <span className="font-medium">Trusted Partners</span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-700">
+                <StarIcon className="w-6 h-6 text-primary-600" />
+                <span className="font-medium">5-Star Rated</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Contact CTA Section */}
       <section id="contact-section" className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80"
-            alt="Contact"
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1932&q=80"
+            alt="Contact us for business investment opportunities"
             fill
             className="object-cover"
             quality={80}
@@ -408,6 +693,26 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Floating Contact Button */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 2, type: "spring" }}
+        className="fixed bottom-6 right-6 z-50"
+      >
+        <motion.a
+          href="/contact"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-primary-600 text-white rounded-full p-4 shadow-2xl flex items-center space-x-2 hover:bg-primary-700 transition-colors"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+          <span className="hidden md:inline font-medium">Get Help</span>
+        </motion.a>
+      </motion.div>
     </div>
   )
 }

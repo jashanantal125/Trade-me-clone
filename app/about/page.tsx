@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
 
@@ -27,8 +28,12 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 md:py-24 overflow-hidden">
+        {/* Rotating Torch Effect */}
+        <div className="torch-container absolute inset-0 flex items-center justify-center">
+          <div className="torch-light" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,6 +44,132 @@ export default function AboutPage() {
               Your trusted partner for business investment and immigration services worldwide.
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Our Team"
+            subtitle="Meet the experienced professionals behind FBIS"
+            center
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Team Member 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg p-6 border border-gray-200"
+            >
+              <div className="text-center mb-4">
+                <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-primary-200 shadow-lg">
+                  <Image
+                    src="/images/tarsem.png"
+                    alt="Mr. Tarsem Singh"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Mr. Tarsem Singh</h3>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="text-sm font-semibold text-primary-700 mb-2">Education</h4>
+                  <p className="text-sm text-gray-600">
+                    M-Tech. in Electronics and Communication from KUK University
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-primary-700 mb-2">Experience</h4>
+                  <p className="text-sm text-gray-600">
+                    Co-founder and Director of Ganpati House of Achievers, an overseas education consultancy (Est. 2014)
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Team Member 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg p-6 border border-gray-200"
+            >
+              <div className="text-center mb-4">
+                <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-primary-200 shadow-lg">
+                  <Image
+                    src="/images/sanjeev.png"
+                    alt="Mr. Sanjeev Saini"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Mr. Sanjeev Saini</h3>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="text-sm font-semibold text-primary-700 mb-2">Education</h4>
+                  <p className="text-sm text-gray-600">
+                    Master&apos;s degree in International Business from Kurukshetra University
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-primary-700 mb-2">Experience</h4>
+                  <p className="text-sm text-gray-600">
+                    Founder and CEO of Ganpati House of Achievers, an overseas education consultancy (Est. 2014)
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Team Member 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -5 }}
+              className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg p-6 border border-gray-200"
+            >
+              <div className="text-center mb-4">
+                <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-primary-200 shadow-lg">
+                  <Image
+                    src="/images/arun.jpeg"
+                    alt="Mr. Arun Kumar"
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Mr. Arun Kumar</h3>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="text-sm font-semibold text-primary-700 mb-2">Education</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Bachelor in Commerce (Punjab University)</li>
+                    <li>• MBA in Finance and Sales</li>
+                    <li>• PGDBA Level-8 (Auckland University) - Logistics and Supply Chain Management</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-primary-700 mb-2">Experience</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Sales & Marketing</li>
+                    <li>• Finance & Logistics</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

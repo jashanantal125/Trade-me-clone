@@ -168,6 +168,89 @@ export const whyChooseUs = [
   'Proven track record helping migrants and investors succeed',
 ]
 
+export const statistics = [
+  {
+    number: '500+',
+    label: 'Successful Clients',
+    icon: '👥',
+  },
+  {
+    number: '15+',
+    label: 'Years Experience',
+    icon: '⭐',
+  },
+  {
+    number: '200+',
+    label: 'Businesses Sold',
+    icon: '💼',
+  },
+  {
+    number: '98%',
+    label: 'Client Satisfaction',
+    icon: '✨',
+  },
+]
+
+export const testimonials = [
+  {
+    name: 'Rajesh Kumar',
+    role: 'Business Owner',
+    location: 'Auckland',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+    text: 'Trade-me helped us find and purchase a petrol station in Auckland. Their guidance through the entire process was exceptional. Highly recommended!',
+    rating: 5,
+  },
+  {
+    name: 'Sarah Chen',
+    role: 'Property Investor',
+    location: 'Wellington',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+    text: 'As a migrant investor, I was unsure about NZ property regulations. The team provided expert advice and helped me secure a great commercial property.',
+    rating: 5,
+  },
+  {
+    name: 'Michael Thompson',
+    role: 'Entrepreneur',
+    location: 'Christchurch',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+    text: 'The immigration and business investment guidance was outstanding. They made our move to New Zealand smooth and successful.',
+    rating: 5,
+  },
+]
+
+export const processSteps = [
+  {
+    step: 1,
+    title: 'Initial Consultation',
+    description: 'We discuss your goals, budget, and requirements to understand your needs.',
+    icon: '📞',
+  },
+  {
+    step: 2,
+    title: 'Opportunity Matching',
+    description: 'We identify suitable properties or businesses that match your criteria.',
+    icon: '🔍',
+  },
+  {
+    step: 3,
+    title: 'Due Diligence',
+    description: 'Comprehensive analysis and verification of opportunities with our expert team.',
+    icon: '📋',
+  },
+  {
+    step: 4,
+    title: 'Negotiation & Purchase',
+    description: 'We handle negotiations and guide you through the purchase process.',
+    icon: '🤝',
+  },
+  {
+    step: 5,
+    title: 'Settlement & Support',
+    description: 'Ongoing support through settlement and beyond to ensure your success.',
+    icon: '✅',
+  },
+]
+
 export const propertyTypes = [
   {
     id: 'residential',
