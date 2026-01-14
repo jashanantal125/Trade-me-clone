@@ -193,27 +193,17 @@ export const statistics = [
 
 export const testimonials = [
   {
-    name: 'Rajesh Kumar',
-    role: 'Business Owner',
+    name: 'Steven',
     location: 'Auckland',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-    text: 'Trade-me helped us find and purchase a petrol station in Auckland. Their guidance through the entire process was exceptional. Highly recommended!',
+    image: '/images/steven.png',
+    text: 'FBIS helped us find and purchase a petrol station in Auckland. Their guidance through the entire process was exceptional. Highly recommended!',
     rating: 5,
   },
   {
-    name: 'Sarah Chen',
-    role: 'Property Investor',
+    name: 'Gurpreet Atwal',
     location: 'Wellington',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
+    image: '/images/Gurpreet atwal.png',
     text: 'As a migrant investor, I was unsure about NZ property regulations. The team provided expert advice and helped me secure a great commercial property.',
-    rating: 5,
-  },
-  {
-    name: 'Michael Thompson',
-    role: 'Entrepreneur',
-    location: 'Christchurch',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80',
-    text: 'The immigration and business investment guidance was outstanding. They made our move to New Zealand smooth and successful.',
     rating: 5,
   },
 ]

@@ -435,7 +435,7 @@ export default function Home() {
                 }
               }
             }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
           >
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -470,7 +470,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600">{testimonial.role} • {testimonial.location}</p>
+                    <p className="text-sm text-gray-600">{testimonial.location}</p>
                   </div>
                 </div>
               </motion.div>
