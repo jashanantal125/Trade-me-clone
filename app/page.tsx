@@ -456,7 +456,7 @@ export default function Home() {
                 </div>
                 
                 {/* Testimonial Text */}
-                <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-4 italic">&quot;{testimonial.text}&quot;</p>
                 
                 {/* Author */}
                 <div className="flex items-center">
