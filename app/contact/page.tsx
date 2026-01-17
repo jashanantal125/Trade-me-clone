@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
 
@@ -22,7 +23,9 @@ export default function ContactPage() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const [submitError, setSubmitError] = useState<string>('')
 
   const validate = () => {
     const newErrors: Record<string, string> = {}
@@ -43,13 +46,38 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
+    setSubmitError('')
     
-    if (validate()) {
-      // In a real application, this would send data to a backend
-      console.log('Form submitted:', formData)
+    if (!validate()) {
+      return
+    }
+
+    setLoading(true)
+
+    try {
+      // EmailJS configuration - Update these with your EmailJS credentials
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id'
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id'
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        service: formData.service || 'Not specified',
+        message: formData.message,
+        to_email: 'fbis.nzd@gmail.com, jashanantal25@gmail.com', // Both recipients
+        reply_to: formData.email,
+      }
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+
       setSubmitted(true)
+      setLoading(false)
       
       // Reset form after 3 seconds
       setTimeout(() => {
@@ -62,6 +90,10 @@ export default function ContactPage() {
           message: '',
         })
       }, 3000)
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setSubmitError('Failed to send message. Please try again or contact us directly via email.')
+      setLoading(false)
     }
   }
 
@@ -214,14 +246,25 @@ export default function ContactPage() {
                 {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
               </div>
 
+              {submitError && (
+                <div className="bg-red-50 border border-red-200 rounded-md p-4">
+                  <p className="text-sm text-red-600">{submitError}</p>
+                </div>
+              )}
+
               <div>
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 shadow-md hover:shadow-lg transition-all duration-300"
+                  disabled={loading}
+                  whileHover={!loading ? { scale: 1.02 } : {}}
+                  whileTap={!loading ? { scale: 0.98 } : {}}
+                  className={`w-full px-6 py-3 bg-primary-600 text-white rounded-md font-medium shadow-md hover:shadow-lg transition-all duration-300 ${
+                    loading 
+                      ? 'opacity-50 cursor-not-allowed' 
+                      : 'hover:bg-primary-700'
+                  }`}
                 >
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                 </motion.button>
               </div>
             </motion.form>
