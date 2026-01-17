@@ -303,7 +303,7 @@ export const businessTypesWithImages = [
       'Established customer base',
       'Multiple revenue streams (fuel, convenience items)',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/juan-fernandez-ZdzO5PgYObA-unsplash.jpg',
   },
   {
     id: 'motels',
@@ -359,7 +359,7 @@ export const businessTypesWithImages = [
       'Regulated market stability',
       'Established supplier relationships',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/stephen-ventura-aocMmIyGs_A-unsplash.jpg',
   },
   {
     id: 'glass-stores',
@@ -401,7 +401,7 @@ export const businessTypesWithImages = [
       'Gaming license value',
       'Entertainment industry growth',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/catcap-XMGGh7fsxP8-unsplash.jpg',
   },
   {
     id: 'grocery-stores',
@@ -429,7 +429,7 @@ export const businessTypesWithImages = [
       'Creative business environment',
       'Community-focused operations',
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1560066984-10dadb303e16?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/images/adam-winger-VjRpkGtS55w-unsplash.jpg',
   },
 ]
 

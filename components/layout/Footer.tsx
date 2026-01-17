@@ -66,7 +66,16 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Email: fbis.nzd@gmail.com</li>
+              <li>
+                <a href="mailto:fbis.nzd@gmail.com" className="hover:text-white transition-colors">
+                  Email: fbis.nzd@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+64223203764" className="hover:text-white transition-colors">
+                  Phone: +64 22 320 3764
+                </a>
+              </li>
               <li>Address: 33 Margarita Rise</li>
               <li>Pukekohe, 2120, New Zealand</li>
             </ul>

@@ -2,7 +2,6 @@
 
 import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
 
@@ -46,7 +45,7 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setSubmitError('')
     
@@ -57,41 +56,61 @@ export default function ContactPage() {
     setLoading(true)
 
     try {
-      // EmailJS configuration - Update these with your EmailJS credentials
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id'
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id'
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key'
-
-      // Prepare template parameters
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone || 'Not provided',
-        service: formData.service || 'Not specified',
-        message: formData.message,
-        to_email: 'fbis.nzd@gmail.com, jashanantal25@gmail.com', // Both recipients
-        reply_to: formData.email,
-      }
-
-      // Send email using EmailJS
-      await emailjs.send(serviceId, templateId, templateParams, publicKey)
-
-      setSubmitted(true)
-      setLoading(false)
+      // FormSubmit.co integration using AJAX endpoint
+      const formDataToSend = new FormData()
       
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setSubmitted(false)
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: '',
-        })
-      }, 3000)
+      // Add form fields
+      formDataToSend.append('name', formData.name)
+      formDataToSend.append('email', formData.email)
+      formDataToSend.append('phone', formData.phone || 'Not provided')
+      formDataToSend.append('service', formData.service || 'Not specified')
+      
+      // Format the message with all details
+      const formattedMessage = `Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Service Interested In: ${formData.service || 'Not specified'}
+
+Message:
+${formData.message}`
+      
+      formDataToSend.append('message', formattedMessage)
+      
+      // Add FormSubmit.co configuration
+      formDataToSend.append('_subject', `New Contact Form Submission from ${formData.name}`)
+      formDataToSend.append('_replyto', formData.email)
+      formDataToSend.append('_captcha', 'false')
+      formDataToSend.append('_template', 'box')
+
+      // Submit to FormSubmit.co
+      const response = await fetch('https://formsubmit.co/ajax/fbis.nzd@gmail.com', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+        setLoading(false)
+        
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setSubmitted(false)
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            service: '',
+            message: '',
+          })
+        }, 3000)
+      } else {
+        throw new Error('Form submission failed')
+      }
     } catch (error) {
-      console.error('EmailJS Error:', error)
+      console.error('FormSubmit Error:', error)
       setSubmitError('Failed to send message. Please try again or contact us directly via email.')
       setLoading(false)
     }
@@ -157,8 +176,15 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               onSubmit={handleSubmit}
+              action="https://formsubmit.co/fbis.nzd@gmail.com"
+              method="POST"
               className="space-y-6"
             >
+              {/* Hidden inputs for FormSubmit.co */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : ''} />
+              <input type="hidden" name="_template" value="box" />
+              
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Name <span className="text-red-500">*</span>
@@ -313,9 +339,11 @@ export default function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-center"
             >
-              <div className="text-4xl mb-4">🌍</div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">Services</h3>
-              <p className="text-gray-600">Worldwide Services</p>
+              <div className="text-4xl mb-4">📞</div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">Phone</h3>
+              <a href="tel:+64223203764" className="text-primary-600 hover:text-primary-700 transition-colors">
+                +64 22 320 3764
+              </a>
             </motion.div>
           </div>
         </div>

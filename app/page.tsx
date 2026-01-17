@@ -228,6 +228,7 @@ export default function Home() {
                 href="/services/property"
                 icon={<HomeIcon className="w-7 h-7" />}
                 delay={0}
+                imageUrl="/images/tierra-mallorca-rgJ1J8SDEAY-unsplash.jpg"
               />
             </motion.div>
             <motion.div
@@ -243,6 +244,7 @@ export default function Home() {
                 href="/services/business-investment"
                 icon={<BuildingOffice2Icon className="w-7 h-7" />}
                 delay={0}
+                imageUrl="/images/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg"
               />
             </motion.div>
             <motion.div
@@ -258,6 +260,7 @@ export default function Home() {
                 href="/services/jobs-manpower"
                 icon={<UsersIcon className="w-7 h-7" />}
                 delay={0}
+                imageUrl="/images/tristan-ruark-UO2_cLRI4YE-unsplash.jpg"
               />
             </motion.div>
             <motion.div
@@ -273,6 +276,7 @@ export default function Home() {
                 href="/services/medical-tourism"
                 icon={<HeartIcon className="w-7 h-7" />}
                 delay={0}
+                imageUrl="/images/mina-rad-UYBAbwaqNIg-unsplash.jpg"
               />
             </motion.div>
           </motion.div>
