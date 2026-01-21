@@ -186,7 +186,7 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                At BFIS, we are dedicated to helping migrants and investors successfully navigate 
+                        At FBIS, we are dedicated to helping migrants and investors successfully navigate 
                 the global business and property landscape. We understand that investing in a 
                 new country can be complex, and we&apos;re here to provide expert guidance every step of the way.
               </p>
