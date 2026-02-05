@@ -4,12 +4,13 @@ import { notFound } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
-import { propertyTypes } from '@/constants/content'
+import { propertyTypes, propertyExampleListings } from '@/constants/content'
 
 export default function PropertyDetailClient({ id }: { id: string }) {
   const property = propertyTypes.find(p => p.id === id)
+  const exampleListings =
+    propertyExampleListings[id as keyof typeof propertyExampleListings] || []
 
   if (!property) {
     notFound()
@@ -115,6 +116,48 @@ export default function PropertyDetailClient({ id }: { id: string }) {
                         className="bg-primary-50 p-4 rounded-lg border border-primary-200 text-center"
                       >
                         <p className="font-semibold text-primary-700">{example}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-semibold mb-4 text-gray-900">Property Listings</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {exampleListings.map((listing, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                      >
+                        <Link
+                          href={`/services/property/listings/${listing.id}`}
+                          className="block bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                        >
+                          <div className="relative h-44">
+                            <Image
+                              src={listing.imageUrl}
+                              alt={listing.title}
+                              fill
+                              className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                            <div className="absolute bottom-3 left-4">
+                              <p className="text-white font-semibold">{listing.title}</p>
+                              <p className="text-white/90 text-sm">{listing.location}</p>
+                            </div>
+                          </div>
+                          <div className="p-4">
+                            <p className="text-primary-700 font-bold">{listing.priceRange}</p>
+                            <ul className="mt-3 space-y-1 text-sm text-gray-600">
+                              {listing.features.map((feature, idx) => (
+                                <li key={idx}>• {feature}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </Link>
                       </motion.div>
                     ))}
                   </div>

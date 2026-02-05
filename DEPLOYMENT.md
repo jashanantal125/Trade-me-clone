@@ -1,4 +1,4 @@
-# Deployment Guide for Nginx
+# Deployment Guide for Nginx and PHP Hosting
 
 ## Static Build Complete ✅
 
@@ -78,9 +78,13 @@ sudo certbot --nginx -d your-domain.com
 ```
 dist/
 ├── index.html          # Homepage
-├── about.html          # About page
-├── contact.html        # Contact page
+├── index.php           # PHP-friendly fallback entry
+├── about/              # About page
+│   └── index.html
+├── contact/            # Contact page
+│   └── index.html
 ├── services/           # Services pages
+├── .htaccess           # Apache/PHP hosting routes
 ├── images/             # All images
 └── _next/              # Next.js static assets
 ```
@@ -89,9 +93,20 @@ dist/
 
 When you make changes:
 
-1. Run `npm run build` locally
+1. Run `npm run build` locally (uses trailing slashes for static routes)
 2. Upload the new `dist` folder to your server
 3. Reload nginx: `sudo systemctl reload nginx`
+
+## PHP/Apache Hosting (cPanel, shared hosting)
+
+If you're deploying to a PHP hosting environment (Apache):
+
+1. Run `npm run build` locally (this copies `.htaccess` and `index.php` into `dist/`).
+2. Upload everything from `dist/` into your hosting `public_html/` directory.
+3. Ensure `mod_rewrite` is enabled (most shared hosts have this by default).
+4. Routes will resolve using `.htaccess` and `index.php`, and all static files are served directly.
+
+If your host uses a different web root, upload `dist/` contents into that root.
 
 ## Troubleshooting
 

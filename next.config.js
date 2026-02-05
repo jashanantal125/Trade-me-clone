@@ -14,8 +14,8 @@ const nextConfig = {
       },
     ],
   },
-  // Ensure trailing slashes are handled correctly for static export
-  trailingSlash: false,
+  // Use trailing slashes for static export to improve route compatibility
+  trailingSlash: true,
 }
 
 module.exports = nextConfig

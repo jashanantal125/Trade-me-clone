@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import SectionHeading from '@/components/ui/SectionHeading'
-import { propertyTypes } from '@/constants/content'
+import { propertyTypes, propertyExampleListings } from '@/constants/content'
 
 export default function PropertyPage() {
   return (
@@ -184,6 +184,76 @@ export default function PropertyPage() {
                 ensuring you make informed decisions that align with your investment goals.
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Property Listings Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Property Listings"
+            subtitle="Explore example property listings across residential, commercial, and industrial categories."
+            center
+          />
+
+          <div className="space-y-12">
+            {propertyTypes.map((propertyType) => {
+              const listings = propertyExampleListings[propertyType.id as keyof typeof propertyExampleListings] || []
+
+              return (
+                <div key={propertyType.id}>
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-semibold text-gray-900">{propertyType.name}</h3>
+                    <Link
+                      href={`/services/property/${propertyType.id}`}
+                      className="text-primary-600 hover:text-primary-700 font-medium"
+                    >
+                      View details →
+                    </Link>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {listings.map((listing, index) => (
+                      <motion.div
+                        key={`${propertyType.id}-${index}`}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                      >
+                        <Link
+                          href={`/services/property/listings/${listing.id}`}
+                          className="block bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                        >
+                          <div className="relative h-44">
+                            <Image
+                              src={listing.imageUrl}
+                              alt={listing.title}
+                              fill
+                              className="object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                            <div className="absolute bottom-3 left-4">
+                              <p className="text-white font-semibold">{listing.title}</p>
+                              <p className="text-white/90 text-sm">{listing.location}</p>
+                            </div>
+                          </div>
+                          <div className="p-4">
+                            <p className="text-primary-700 font-bold">{listing.priceRange}</p>
+                            <ul className="mt-3 space-y-1 text-sm text-gray-600">
+                              {listing.features.map((feature, idx) => (
+                                <li key={idx}>• {feature}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
