@@ -8,6 +8,26 @@ import SectionHeading from '@/components/ui/SectionHeading'
 import Button from '@/components/ui/Button'
 import { businessTypesWithImages, businessTypes } from '@/constants/content'
 
+const petrolStationPriceRows = [
+  { sNo: 1, refNo: 'FBIS/6790', businessType: 'Gas/ Fuel Station', location: 'Christchruch', turnover: '5,700,000.00', priceRangeInInr: '2.5 Cr to 5.5 Cr', fuelCapacity: '2 M+' },
+  { sNo: 2, refNo: 'FBIS/5493', businessType: 'Gas/ Fuel Station', location: 'Christchruch', turnover: '5,000,000.00', priceRangeInInr: '2.5 Cr to 5.5 Cr', fuelCapacity: 'Not disclosed' },
+  { sNo: 3, refNo: 'FBI/2969', businessType: 'Gas/ Fuel Station', location: 'Christchruch', turnover: 'Not disclosed', priceRangeInInr: '2.5 Cr to 5.5 Cr', fuelCapacity: 'Not disclosed' },
+  { sNo: 4, refNo: 'FBIS/8471', businessType: 'Gas/ Fuel Station', location: 'Christchruch', turnover: '7,000,000.00', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: '3.2 M' },
+  { sNo: 5, refNo: 'FBIS/0537', businessType: 'Gas/ Fuel Station', location: 'South Island', turnover: '7,237,000.00', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: 'Not disclosed' },
+  { sNo: 6, refNo: 'FBIS/6676', businessType: 'Gas/ Fuel Station', location: 'South Island', turnover: '14,000,000.00', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: '5 M' },
+  { sNo: 7, refNo: 'FBIS/8041', businessType: 'Gas/ Fuel Station', location: 'Canterbury', turnover: '4,000,000.00', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: 'Not disclosed' },
+  { sNo: 8, refNo: 'FBIS/5893', businessType: 'Gas/ Fuel Station', location: 'Auckland', turnover: 'Not disclosed', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: '1 M +' },
+  { sNo: 9, refNo: 'FBIS/4579', businessType: 'Gas/ Fuel Station', location: 'Northland Region, Far North', turnover: '10,657,327.00', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: 'Not disclosed' },
+  { sNo: 10, refNo: 'FBIS/7369', businessType: 'Gas/ Fuel Station', location: 'Auckland', turnover: 'Not disclosed', priceRangeInInr: '50 Lac to 2.5 Cr', fuelCapacity: 'Not disclosed' },
+  { sNo: 11, refNo: 'FBIS/4721', businessType: 'Gas/ Fuel Station', location: 'Auckland', turnover: 'Not disclosed', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: 'Not disclosed' },
+  { sNo: 12, refNo: 'FBIS/4600', businessType: 'Gas/ Fuel Station', location: 'South Canterbury', turnover: '4,000,000.00', priceRangeInInr: 'N/A', fuelCapacity: 'Not disclosed' },
+  { sNo: 13, refNo: 'FBIS/1389', businessType: 'Gas/ Fuel Station', location: 'Whanganui', turnover: 'Not disclosed', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: 'Not disclosed' },
+  { sNo: 14, refNo: 'FBIS/0994', businessType: 'Gas/ Fuel Station', location: 'West Cost', turnover: 'Not disclosed', priceRangeInInr: 'N/A', fuelCapacity: 'Not disclosed' },
+  { sNo: 15, refNo: 'FBIS/6336', businessType: 'Gas/ Fuel Station', location: 'Auckland', turnover: '10,388,253.00', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: '3.8M' },
+  { sNo: 16, refNo: 'FBIS/6219', businessType: 'Gas/ Fuel Station', location: 'Auckland', turnover: 'Not disclosed', priceRangeInInr: '50 Lac to 2.5 Cr', fuelCapacity: '0.7 M' },
+  { sNo: 17, refNo: 'FBIS/5893', businessType: 'Gas/ Fuel Station', location: 'Auckland', turnover: 'Not disclosed', priceRangeInInr: 'Above 5.5 Cr', fuelCapacity: '1 M +' },
+]
+
 export default function BusinessDetailClient({ id }: { id: string }) {
   // Try new structure first, then fall back to old structure for compatibility
   let business = businessTypesWithImages.find(b => b.id === id)
@@ -119,19 +139,55 @@ export default function BusinessDetailClient({ id }: { id: string }) {
                   <p className="text-gray-700 leading-relaxed mb-4">
                     Investment levels for {business.name.toLowerCase()} typically range from:
                   </p>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 rounded-xl border-2 border-primary-300 shadow-lg"
-                  >
-                    <p className="text-3xl font-bold text-primary-700 mb-2">{business.priceRange}</p>
-                    <p className="text-gray-600 text-sm">
-                      Prices vary based on location, size, profitability, and business assets. 
-                      We can provide detailed information on specific opportunities.
-                    </p>
-                  </motion.div>
+                  {business.id === 'petrol-stations' ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm"
+                    >
+                      <table className="min-w-full text-sm text-left text-gray-700">
+                        <thead className="bg-gray-100 text-gray-900">
+                          <tr>
+                            <th className="px-4 py-3 font-semibold">S. No.</th>
+                            <th className="px-4 py-3 font-semibold">Ref. No.</th>
+                            <th className="px-4 py-3 font-semibold">Business Type</th>
+                            <th className="px-4 py-3 font-semibold">Location</th>
+                            <th className="px-4 py-3 font-semibold">Turnover p.a. ($)</th>
+                            <th className="px-4 py-3 font-semibold">Price Range in INR</th>
+                            <th className="px-4 py-3 font-semibold">Fuel Capacity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {petrolStationPriceRows.map((row) => (
+                            <tr key={`${row.sNo}-${row.refNo}`} className="border-t border-gray-200 even:bg-gray-50">
+                              <td className="px-4 py-3">{row.sNo}</td>
+                              <td className="px-4 py-3">{row.refNo}</td>
+                              <td className="px-4 py-3">{row.businessType}</td>
+                              <td className="px-4 py-3">{row.location}</td>
+                              <td className="px-4 py-3">{row.turnover}</td>
+                              <td className="px-4 py-3">{row.priceRangeInInr}</td>
+                              <td className="px-4 py-3">{row.fuelCapacity}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-gradient-to-br from-primary-50 to-primary-100 p-6 rounded-xl border-2 border-primary-300 shadow-lg"
+                    >
+                      <p className="text-3xl font-bold text-primary-700 mb-2">{business.priceRange}</p>
+                      <p className="text-gray-600 text-sm">
+                        Prices vary based on location, size, profitability, and business assets.
+                        We can provide detailed information on specific opportunities.
+                      </p>
+                    </motion.div>
+                  )}
                 </div>
 
                 <div>

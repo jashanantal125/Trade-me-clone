@@ -15,6 +15,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function BusinessDetailPage({ params }: { params: { id: string } }) {
-  return <BusinessDetailClient id={params.id} />
+type BusinessDetailPageParams = { id: string } | Promise<{ id: string }>
+
+export default async function BusinessDetailPage({ params }: { params: BusinessDetailPageParams }) {
+  const resolvedParams = await params
+  return <BusinessDetailClient id={resolvedParams.id} />
 }
